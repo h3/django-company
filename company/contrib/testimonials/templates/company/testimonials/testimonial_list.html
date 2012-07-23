@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{% trans "Testimonials" %}</h1>
+</div>
+
+<div class="company-testimonials-list">
+    {% for object in object_list %}
+    <div class="row company-testimonial">
+        {% if object.image %}
+        <div class="span6">
+            <div class="well">
+                {{ object.text|safe }}
+            </div>
+        </div>
+        {% else %}
+        <div class="span6">
+            <div class="well">
+                {{ object.text|safe }}
+                <h3>{{ object.firstname }} {{ object.lastname }}</h3>
+                <small>{{ object.title }}</small>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
