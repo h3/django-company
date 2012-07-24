@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n thumbnail %}
 
 {% block content %}
 <div class="page-header">
@@ -10,11 +10,17 @@
     {% for object in object_list %}
     <div class="row company-testimonial">
         {% if object.image %}
-        <div class="span6">
+        <div class="span9">
             <div class="well">
                 {{ object.text|safe }}
+                <h3>{{ object.firstname }} {{ object.lastname }}</h3>
+                <small>{{ object.title }}</small>
             </div>
         </div>
+        <div class="span3">
+            <img src="{% thumbnail object.image 200x200 crop='smart' quality=100 %}" alt="{{ object.company }}">
+        </div>
+
         {% else %}
         <div class="span6">
             <div class="well">

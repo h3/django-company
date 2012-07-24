@@ -9,4 +9,4 @@ class TestimonialListView(ListView):
     template_name = 'company/testimonials/testimonial_list.html'
 
     def get_queryset(self):
-        return self.model.objects.filter(is_visible=True)
+        return self.model.objects.filter(is_visible=True).order_by('?')
