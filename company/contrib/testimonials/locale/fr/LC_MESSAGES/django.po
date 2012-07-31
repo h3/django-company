@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-31 11:36-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: models.py:11
+msgid "Firstname"
+msgstr "Prénom"
+
+#: models.py:12
+msgid "Lastname"
+msgstr "Nom de famille"
+
+#: models.py:13
+msgid "Job title"
+msgstr "Titre"
+
+#: models.py:14
+msgid "Company"
+msgstr "Compagnie"
+
+#: models.py:15
+msgid "Location"
+msgstr "Lieu"
+
+#: models.py:16
+msgid "Image"
+msgstr "Image"
+
+#: models.py:18
+msgid "Website"
+msgstr "Site web"
+
+#: models.py:19
+msgid "Bio"
+msgstr "Bio"
+
+#: models.py:20
+msgid "Position"
+msgstr "Position"
+
+#: models.py:21
+msgid "Is visible"
+msgstr "Est visible"
+
+#: models.py:24
+#, python-format
+msgid "Testimonial of %(name)s from %(company)s"
+msgstr "Témoignage de %(name)s pour %(company)s"
+
+#: models.py:31
+msgid "Testimonial"
+msgstr "Témoignage"
+
+#: models.py:32 templates/company/testimonials/testimonial_list.html:6
+msgid "Testimonials"
+msgstr "Témoignages"
