@@ -27,14 +27,25 @@ class PointOfService(models.Model):
     position   = models.PositiveIntegerField(_('Position'), default=0)
     is_visible = models.BooleanField(_('Is visible'), default=True)
 
+    @property
+    def address(self):
+        out = []
+        if self.street_num: out.append(self.street_num)
+        if self.street:     out.append(self.street)
+        if self.city:       out.append(self.city)
+        if self.state:      out.append(self.state)
+        if self.country:    out.append(self.country)
+        if self.zipcode:    out.append(self.zipcode)
+        return ' '.join(out)
+
+    def __unicode__(self):
+        return unicode(self.name)
+
     class Meta:
         app_label = 'company'
         ordering = ('position', 'name')
         verbose_name = _('Point of service')
         verbose_name_plural = _('Points of service')
-
-    def __unicode__(self):
-        return unicode(self.name)
 
 post_delete.connect(file_cleanup, sender=PointOfService, 
         dispatch_uid="PointOfService.file_cleanup")
