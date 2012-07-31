@@ -8,6 +8,36 @@
 
 <div class="company-testimonials-list">
     {% for object in object_list %}
+    <div class="company-testimonial">
+        <blockquote class="span9">
+            <div class="well">
+                {% if object.image %}
+                {% if object.website %}
+                <a href="{{ object.website }}" title="{{ object.website }}" target="_blank" rel="nofollow" class="pull-left image">
+                    <img src="{% thumbnail object.image 140x140 %}" title="{{ object.company }}">
+                </a>
+                {% else %}
+                <span class="pull-left image"><img src="{% thumbnail object.image 140x140 %}" title="{{ object.company }}"></span>
+                {% endif %}
+                {{ object.text|safe }}
+            </div>
+        </blockquote>
+        <div class="{% if object.image %}span3{% else %}span5{% endif %}">
+            <cite>
+                <h4>{{ object.firstname }} {{ object.lastname }}</h4>
+                <small>{{ object.title }}</small>
+                {% if object.website %}
+                <a href="{{ object.website }}" title="{{ object.website }}" target="_blank" rel="nofollow">{{ object.company }}</a>
+                {% else %}
+                <span>{{ object.company }}</span>
+                {% endif %}
+            </cite>
+        </div>
+        {% endif %}
+    </div>
+    <hr>
+    {% endfor %}
+    {% comment %}
     <div class="row company-testimonial">
         {% if object.image %}
         <div class="span9">
@@ -31,6 +61,6 @@
         </div>
         {% endif %}
     </div>
-    {% endfor %}
+    {% endcomment %}
 </div>
 {% endblock %}

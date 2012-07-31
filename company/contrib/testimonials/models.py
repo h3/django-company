@@ -21,7 +21,9 @@ class Testimonial(models.Model):
     is_visible = models.BooleanField(_('Is visible'), default=True)
 
     def __unicode__(self):
-        return u"Testimony from %s %s for %s" % (self.firstname, self.lastname, self.company)
+        return _("Testimonial of %(name)s from %(company)s") % {
+                'name': self.firstname +' '+ self.lastname, 
+                'company': self.company}
 
     class Meta:
         app_label = 'company'
