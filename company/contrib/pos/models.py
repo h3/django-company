@@ -21,6 +21,7 @@ class PointOfService(models.Model):
     country    = models.CharField(_('Country'), max_length=150, blank=True, null=True)
     zipcode    = models.CharField(_('Postal code'), max_length=50, blank=True, null=True)
     gmap       = models.TextField(_('Google Map'), blank=True, null=True)
+    website    = models.CharField(_('Website'), max_length=250, blank=True, null=True)
     phone      = models.CharField(_('Phone'), max_length=60, blank=True, null=True)
     tollfree   = models.CharField(_('Toll-free'), max_length=60, blank=True, null=True)
     fax        = models.CharField(_('Fax'), max_length=60, blank=True, null=True)
