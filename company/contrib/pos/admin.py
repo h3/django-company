@@ -10,4 +10,8 @@ from company.contrib.pos.models import PointOfService
 class PointOfServiceAdmin(AdminThumbnailMixin, TranslationAdmin):
     list_display = ('thumbnail', 'name', 'slug',)
     prepopulated_fields = {'slug': ('name',)}
+    thumbnail_options = {'size': (80, 80)}
+    thumbnail_image_field_name = 'photo'
+    thumbnail_alt_field_name = 'name'
+    thumbnail_404 = ""
 admin.site.register(PointOfService, PointOfServiceAdmin)
